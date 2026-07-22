@@ -1,3 +1,7 @@
+## Name: Renick Fabian Rajesh
+## Reg No: 212224230227
+## Date: 22/07/2026
+
 # VIGENERE-CIPHER
 ## EX. NO: 4
  
@@ -30,7 +34,38 @@ STEP-8: Repeat the above steps to generate the entire cipher text.
 
 
 ## PROGRAM
+```PY
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char pt[100], key[100], ct[100];
+    int i, j = 0;
+
+    printf("Enter Plain Text (CAPS): ");
+    scanf("%s", pt);
+
+    printf("Enter Key (CAPS): ");
+    scanf("%s", key);
+
+    for(i = 0; pt[i] != '\0'; i++) {
+        ct[i] = ((pt[i] - 'A') + (key[j] - 'A')) % 26 + 'A';
+        j++;
+        if(key[j] == '\0')
+            j = 0;
+    }
+
+    ct[i] = '\0';
+    printf("Cipher Text: %s", ct);
+
+    return 0;
+}
+
+```
 
 ## OUTPUT
+<img width="606" height="207" alt="image" src="https://github.com/user-attachments/assets/cda075d7-bd3a-4094-8f3e-2d3cf618d7dd" />
+
 
 ## RESULT
+Thus the program has been executed successfully using vigenere Cipher
